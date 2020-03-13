@@ -15,6 +15,7 @@ void processCommand(char* command);
 // Variable declarations used within main
 char commandBuffer[MAX_COMMAND_LENGTH];
 int commandBufferCount = 0;
+int testBit = 0;
 
 int main(void)
 {
@@ -59,6 +60,17 @@ void processCommand(char* command)
     if (strcmp(command, "gpnvmclr") == 0) {
         printf("Clearing GP NVM.\r\n");
         flash_clear_gpnvm(1);
+    }
+    else if (strcmp(command, "setbit") == 0) {
+        printf("Setting testBit to 1.\r\n");
+        testBit = 1;
+    }
+    else if (strcmp(command, "clearbit") == 0) {
+        printf("Setting testBit to 0.\r\n");
+        testBit = 0;
+    }
+    else if (strcmp(command, "getbit") == 0) {
+        printf("Value of testBit is %d.\r\n", testBit);
     }
     else {
         printf("Command not recognized.\r\n");
