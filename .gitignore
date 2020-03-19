@@ -5,11 +5,7 @@
 # so most of the project and solution files are the same as VS files,
 # only prefixed by an `at`.
 
-#Build Directories
-[Dd]ebug/
-[Rr]elease/
-
-#Build Results
+# Build Results
 *.o
 *.d
 *.eep
@@ -17,8 +13,10 @@
 *.hex
 *.map
 *.srec
+*.bin
+*.lss
 
-#User Specific Files
+# User Specific Files
 *.atsuo
 output.csv
 testLog.xml
